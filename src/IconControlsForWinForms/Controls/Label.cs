@@ -1,23 +1,13 @@
-﻿using FontAwesomeControls.Business;
-using FontAwesomeControls.Infrastucture.Entities;
-using FontAwesomeControls.Utils;
-using System;
-using System.Collections.Generic;
+﻿using IconControlsForWinForms.Entities;
+using IconControlsForWinForms.Logic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace FontAwesomeControls
+namespace IconControlsForWinForms
 {
-    public partial class FontAwesomeLabel : Label
+    public class Label : System.Windows.Forms.Label
     {
-
         private IconType _IconType = IconType.Solid;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public IconType IconType
         {
             get { return _IconType; }
@@ -29,7 +19,7 @@ namespace FontAwesomeControls
         }
 
         private string _IconName = "home";
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public string IconName
         {
             get { return _IconName; }
@@ -41,7 +31,7 @@ namespace FontAwesomeControls
         }
 
         private Color _IconColor = Color.Black;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public Color IconColor
         {
             get { return _IconColor; }
@@ -52,8 +42,8 @@ namespace FontAwesomeControls
             }
         }
 
-        private int _IconWidth = 20;
-        [Category(Category.FontAwesomeIcon)]
+        private int _IconWidth = 25;
+        [Category(Constants.NamespacePropertly)]
         public int IconWidth
         {
             get { return _IconWidth; }
@@ -64,29 +54,28 @@ namespace FontAwesomeControls
             }
         }
 
-        public FontAwesomeLabel()
+        public Label()
         {
-            AutoSize = false;
-            InitializeComponent();
-            PaintIconImage();
-            Size = new Size(151,32);
+            Size = new Size(151, 32);
             ImageAlign = ContentAlignment.MiddleLeft;
-            TextAlign = ContentAlignment.MiddleRight;
+            TextAlign = ContentAlignment.MiddleCenter;
+            PaintIconImage();
+        }
+
+        protected override void OnHandleCreated(EventArgs e)
+        {
+            base.OnHandleCreated(e);
+            AutoSize = false;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
         {
             base.OnPaint(pe);
         }
+
         private void PaintIconImage()
         {
-            Image = IconBusiness.GetImage(new Infrastucture.Entities.Icon
-            {
-                Color = IconColor,
-                Width = IconWidth,
-                Name = IconName,
-                Type = IconType
-            });
+            Image = IconLogic.GetImage(IconType, IconName, IconColor, IconWidth);
         }
     }
 }

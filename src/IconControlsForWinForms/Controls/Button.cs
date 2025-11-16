@@ -1,16 +1,13 @@
-﻿using FontAwesomeControls.Business;
-using FontAwesomeControls.Infrastucture.Entities;
-using FontAwesomeControls.Utils;
+﻿using IconControlsForWinForms.Entities;
+using IconControlsForWinForms.Logic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
 
-namespace FontAwesomeControls
+namespace IconControlsForWinForms
 {
-    public partial class FontAwesomeButton : Button
+    public class Button : System.Windows.Forms.Button
     {
         private IconType _IconType = IconType.Solid;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public IconType IconType
         {
             get { return _IconType; }
@@ -22,7 +19,7 @@ namespace FontAwesomeControls
         }
 
         private string _IconName = "home";
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public string IconName
         {
             get { return _IconName; }
@@ -34,7 +31,7 @@ namespace FontAwesomeControls
         }
 
         private Color _IconColor = Color.Black;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public Color IconColor
         {
             get { return _IconColor; }
@@ -46,7 +43,7 @@ namespace FontAwesomeControls
         }
 
         private int _IconWidth = 25;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public int IconWidth
         {
             get { return _IconWidth; }
@@ -57,12 +54,12 @@ namespace FontAwesomeControls
             }
         }
 
-        public FontAwesomeButton()
+        public Button()
         {
-            InitializeComponent();
             PaintIconImage();
-            base.TextImageRelation = TextImageRelation.ImageAboveText;
-            base.TextAlign = ContentAlignment.BottomCenter;
+            TextImageRelation = TextImageRelation.ImageBeforeText;
+            TextAlign = ContentAlignment.MiddleCenter;
+            ImageAlign = ContentAlignment.MiddleCenter;
         }
 
         protected override void OnPaint(PaintEventArgs pe)
@@ -72,13 +69,7 @@ namespace FontAwesomeControls
 
         private void PaintIconImage()
         {
-            Image = IconBusiness.GetImage(new Infrastucture.Entities.Icon
-            {
-                Color = IconColor,
-                Width = IconWidth,
-                Name = IconName,
-                Type = IconType
-            });
+            Image = IconLogic.GetImage(IconType, IconName, IconColor, IconWidth);
         }
     }
 }

@@ -1,17 +1,13 @@
-﻿using FontAwesomeControls.Business;
-using FontAwesomeControls.Infrastucture.Entities;
-using FontAwesomeControls.Utils;
-using System;
+﻿using IconControlsForWinForms.Entities;
+using IconControlsForWinForms.Logic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Windows.Forms;
 
-namespace FontAwesomeControls
+namespace IconControlsForWinForms
 {
-    public partial class FontAwesomeSingle : Control
+    public class Icon : Control
     {
         private IconType _IconType = IconType.Solid;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public IconType IconType
         {
             get { return _IconType; }
@@ -23,7 +19,7 @@ namespace FontAwesomeControls
         }
 
         private string _IconName = "home";
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public string IconName
         {
             get { return _IconName; }
@@ -35,7 +31,7 @@ namespace FontAwesomeControls
         }
 
         private Color _IconColor = Color.Black;
-        [Category(Category.FontAwesomeIcon)]
+        [Category(Constants.NamespacePropertly)]
         public Color IconColor
         {
             get { return _IconColor; }
@@ -46,9 +42,8 @@ namespace FontAwesomeControls
             }
         }
 
-        public FontAwesomeSingle()
+        public Icon()
         {
-            InitializeComponent();
             PaintIconImage();
             BackgroundImageLayout = ImageLayout.Stretch;
         }
@@ -64,17 +59,9 @@ namespace FontAwesomeControls
             PaintIconImage();
         }
 
-
         private void PaintIconImage()
         {
-            BackgroundImage = IconBusiness.GetImage(new Infrastucture.Entities.Icon
-            {
-                Color = IconColor,
-                Width = Size.Width,
-                Height = Size.Height,
-                Name = IconName,
-                Type = IconType
-            });
+            BackgroundImage = IconLogic.GetImage(IconType, IconName, IconColor, Size.Width, Size.Height);
         }
     }
 }
