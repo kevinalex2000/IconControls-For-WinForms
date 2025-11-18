@@ -16,10 +16,17 @@
 
 ---
 
+## 🔎 Vista previa de iconos disponibles
+
+Puedes explorar visualmente todos los iconos disponibles en la siguiente página:
+
+👉 **https://kevinalex2000.github.io/IconControls-For-WinForms-Web/**
+
+---
+
 ## 📦 Instalación
 
 Instala el paquete desde NuGet:
 
 ```powershell
 Install-Package IconControls-For-WinForms
-```
