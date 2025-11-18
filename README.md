@@ -9,7 +9,6 @@
 ## 🚀 Características principales
 
 - Controles personalizados listos para usar
-- Integración sencilla de iconos (SVG/PNG o tu propio set)
 - Botones, labels y otros componentes con iconos
 - Fácil de implementar y personalizar
 - Diseñado para aplicaciones de escritorio .NET (WinForms)
@@ -30,3 +29,4 @@ Instala el paquete desde NuGet:
 
 ```powershell
 Install-Package IconControls-For-WinForms
+```
