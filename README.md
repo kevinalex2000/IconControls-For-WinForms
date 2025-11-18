@@ -1,6 +1,25 @@
+# IconControls-For-WinForms
 
-# Controles con iconos para WindowsForms
-
-Una libreria para proyectos windows forms (C#) que te otorga distintos controles con la capacidad de añadir iconos de <a href="https://fontawesome.com/v4/icons/">fontawesome</a>.
+**IconControls-For-WinForms** es una librería para proyectos **Windows Forms en C#** que proporciona **controles personalizados con soporte integrado para iconos**, permitiendo crear interfaces modernas y visualmente más atractivas sin esfuerzo.
 
 ![Demo](https://kevinalex2000.github.io/Controls-FontAwesome-for-Windows-Forms/docs/imgs/intro.gif "Demo")
+
+---
+
+## 🚀 Características principales
+
+- Controles personalizados listos para usar
+- Integración sencilla de iconos (SVG/PNG o tu propio set)
+- Botones, labels y otros componentes con iconos
+- Fácil de implementar y personalizar
+- Diseñado para aplicaciones de escritorio .NET (WinForms)
+
+---
+
+## 📦 Instalación
+
+Instala el paquete desde NuGet:
+
+```powershell
+Install-Package IconControls-For-WinForms
+```

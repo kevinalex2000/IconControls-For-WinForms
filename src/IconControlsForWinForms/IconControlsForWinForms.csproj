@@ -5,7 +5,24 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Title>IconControls For WinForms</Title>
+    <Description>Biblioteca de iconos y controles para Windows Forms .Net</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/kevinalex2000/IconControls-For-WinForms</RepositoryUrl>
+    <Authors>Kevin Peña</Authors>
+    <RepositoryType></RepositoryType>
+    <PackageTags>winforms;icons;ui-controls;custom-controls;windows-forms;csharp;dotnet;ui-library;desktop-app;icon-buttons;icon-labels;user-interface;component-library</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://kevinalex2000.github.io/IconControls-For-WinForms-Web/</PackageProjectUrl>
   </PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Svg" Version="3.4.7" />
