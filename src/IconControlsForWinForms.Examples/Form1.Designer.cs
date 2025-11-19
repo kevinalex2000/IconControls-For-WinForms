@@ -70,9 +70,9 @@
             // label3
             // 
             label3.IconColor = Color.Black;
-            label3.IconName = "user-check";
+            label3.IconName = "user";
             label3.IconType = Entities.IconType.Solid;
-            label3.IconWidth = 25;
+            label3.IconWidth = 20;
             label3.Image = (Image)resources.GetObject("label3.Image");
             label3.ImageAlign = ContentAlignment.MiddleLeft;
             label3.Location = new Point(80, 264);
